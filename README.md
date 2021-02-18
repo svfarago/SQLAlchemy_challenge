@@ -69,9 +69,9 @@ https://app.quickdatabasediagrams.com/.
 
 
 * Web URLs:
-- xxx
+- https://docs.sqlalchemy.org/en/13/orm/extensions/automap.html < Key to setting up initial rows of code.
 
-* URLs last used: February 17, 2021
+* URLs last used: February 18, 2021
 
 
 ###  Contact Information ===============
