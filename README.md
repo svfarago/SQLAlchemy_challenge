@@ -70,6 +70,8 @@ https://app.quickdatabasediagrams.com/.
 
 * Web URLs:
 - https://docs.sqlalchemy.org/en/13/orm/extensions/automap.html < Key to setting up initial rows of code.
+- https://stackoverflow.com/questions/11616260/how-to-get-all-objects-with-a-date-that-fall-in-a-specific-month-sqlalchemy/31641488
+
 
 * URLs last used: February 18, 2021
 
