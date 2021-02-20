@@ -2,7 +2,7 @@
 * This is my first SQL project using SQLAlchemy.
 
 ## ReadMe File
-* Updated: February 17, 2021 | Created: February 17, 2021
+* Updated: February 19, 2021 | Created: February 17, 2021
 * Copyright: open source
 
 ### License ===========================
@@ -22,7 +22,6 @@
 - GitBash terminal
 - Visual Studio Code for the Readme.md
 - Git Hub (to save versions and share code while in development)
-- Quick Database Diagrams (URL below)
 - Image viewer such as Microsoft Photos or Microsoft Paint
 
 * Similar applications may also work.
@@ -32,9 +31,16 @@
 
 ### List of Files ====================
 * \SQLAlchemy_challenge
+*    \.ipynb_checkpoints
 *    \Images
+-       Last_12Months_Precipitation.png
 *    \Resources
--        xxx
+-        hawaii.sqlite
+-        hawaii_measurements.csv
+-        hawaii_stations.csv
+*    .gitignore
+*    app.py
+*    climate_analysis.ipynb
 *    README.md
 *    README_SQLAlch_Instructions
 
@@ -49,8 +55,7 @@
 
 
 ### Additional Resources =======================
-* I used the quick Database Diagrams free app on Windows to create entity relationship diagram (ERD)
-https://app.quickdatabasediagrams.com/.
+* None.
 
 
 ###  Data Alterations =======================
@@ -69,11 +74,16 @@ https://app.quickdatabasediagrams.com/.
 
 
 * Web URLs:
+- https://stackoverflow.com/questions/11616260/
+https://docs.sqlalchemy.org/en/13/core/reflection.html
+- https://datatofish.com/round-values-pandas-dataframe/
 - https://docs.sqlalchemy.org/en/13/orm/extensions/automap.html < Key to setting up initial rows of code.
-- https://stackoverflow.com/questions/11616260/how-to-get-all-objects-with-a-date-that-fall-in-a-specific-month-sqlalchemy/31641488
+- https://medium.com/@jman4190/explaining-the-inplace-parameter-for-beginners-5de7ffa18d2e
+- https://www.tutorialspoint.com/python_pandas/python_pandas_descriptive_statistics.htm
 
 
-* URLs last used: February 18, 2021
+
+* URLs last used: February 19, 2021
 
 
 ###  Contact Information ===============
@@ -82,4 +92,4 @@ Colorado   United States
 
 ### Random Notes ===============
 This is my first SQL project using SQLAlchemy.
-Time to complete: approximately xx hours
+Time to complete: approximately 18 hours
