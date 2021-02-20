@@ -1,8 +1,8 @@
 # SQLAlchemy_challenge
-* This is my first SQL project using SQLAlchemy.
+* This is my first SQL project using SQLAlchemy and Flask.
 
 ## ReadMe File
-* Updated: February 19, 2021 | Created: February 17, 2021
+* Updated: February 20, 2021 | Created: February 17, 2021
 * Copyright: open source
 
 ### License ===========================
@@ -27,6 +27,7 @@
 * Similar applications may also work.
 
 * May need to install dependencies for pgAdmin and Postgres to work with Jupyter Notebook. From a command line, run: pip install psycopg2 -or- pip install psycopg2 sqlalchemy
+* May need to install Flask. From a command line, run: pip install flask
 
 
 ### List of Files ====================
@@ -34,24 +35,24 @@
 *    \.ipynb_checkpoints
 *    \Images
 -       Last_12Months_Precipitation.png
+-       Last_12Months_Temperature.png
 *    \Resources
 -        hawaii.sqlite
 -        hawaii_measurements.csv
 -        hawaii_stations.csv
 *    .gitignore
 *    app.py
+*    postgres.py
 *    climate_analysis.ipynb
 *    README.md
-*    README_SQLAlch_Instructions
 
 
 ### Operating Instructions =============
-* Open xxx file to view entity relationship diagram.
 * Note: You may need a password to access the Postgres database.
 
 
 ### Data Set(s) =======================
-* See "List of Files" section above for list of .csv files associated with this project.
+* See "List of Files" section above for list of .csv and .sqlite files associated with this project.
 
 
 ### Additional Resources =======================
@@ -83,7 +84,7 @@ https://docs.sqlalchemy.org/en/13/core/reflection.html
 
 
 
-* URLs last used: February 19, 2021
+* URLs last used: February 20, 2021
 
 
 ###  Contact Information ===============
@@ -91,5 +92,5 @@ Colorado   United States
 
 
 ### Random Notes ===============
-This is my first SQL project using SQLAlchemy.
+This is my first SQL project using SQLAlchemy and Flask.
 Time to complete: approximately 18 hours
