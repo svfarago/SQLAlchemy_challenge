@@ -76,7 +76,8 @@
 
 * Web URLs:
 - https://stackoverflow.com/questions/11616260/
-https://docs.sqlalchemy.org/en/13/core/reflection.html
+- https://docs.python.org/3/library/datetime.html
+- https://docs.sqlalchemy.org/en/13/core/reflection.html
 - https://datatofish.com/round-values-pandas-dataframe/
 - https://docs.sqlalchemy.org/en/13/orm/extensions/automap.html < Key to setting up initial rows of code.
 - https://medium.com/@jman4190/explaining-the-inplace-parameter-for-beginners-5de7ffa18d2e
