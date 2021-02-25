@@ -50,9 +50,11 @@ def welcome():
         f"<strong>Dynamic</strong><br/>"
         f"/api/v1.0/<start>(enter start date here)<br/>"
         f"Enter a start date(m-d-yyyy) to return the minimum, maximum, and average temperatures.<br/>"
+        f"Example:/api/v1.0/8-17-2017<br/>"
         f"<br/>"
         f"/api/v1.0/<start>/<end><br/>"
-        f"Enter a start and end date (m-d-yyyy) to return the minimum, maximum, and average temperatures.<br/>"
+        f"Enter a start and end date (m-d-yyyy) separated by an underscore (_) to return the minimum, maximum, and average temperatures.<br/>"
+        f"Example:/api/v1.0/8-17-2017_8-23-2017<br/>"
         f"<br/>"
         f"<br/>"
         f"Dates available for this dataset start at 1/1/2010 and end at 8/23/2017.<br/>"
@@ -137,12 +139,13 @@ def start_date(start):
 
     # Put data into a dictionary format
     temp_stats_data = []
-    temp_stats_dict = [{"Start Date": start},
+    temp_stats_dict = [{"Start Date": start_date},
         {"Minimum Temperature": min_temp},
         {"Maximum Temperature": max_temp},
         {"Average Temperature": avg_temp}
         ]
 
+    temp_stats_data.append(temp_stats_dict)
 
     return jsonify(temp_stats_dict)
 
@@ -151,14 +154,40 @@ def start_date(start):
 #------------------------------------------------
 
 
+@app.route("/api/v1.0/<start>_<end>")
+def start_end_date(start, end):
+    # Create session from Python to the DB
+    session = Session(engine)
+
+    # Note: Date input format = 6-15-2018
+    start_date = datetime.strptime(start,"%m-%d-%Y").date()
+    end_date = datetime.strptime(end,"%m-%d-%Y").date()
+
+    temperature_stats = session.query (func.min(Measurement.tobs), func.max (Measurement.tobs), func.avg (Measurement.tobs)).\
+        filter(Measurement.date >= start_date).\
+        filter(Measurement.date <= end_date).all()
+    
+    temp_stats_results = list(np.ravel(temperature_stats))
+
+    min_temp = temp_stats_results[0]
+    max_temp = temp_stats_results[1]
+    avg_temp = temp_stats_results[2]
 
 
+    # Put data into a dictionary format
+    temp_stats_data = []
+    temp_stats_dict = [{"Start Date": start_date},{"End Date": end_date},
+        {"Minimum Temperature": min_temp},
+        {"Maximum Temperature": max_temp},
+        {"Average Temperature": avg_temp}
+        ]
 
+    temp_stats_data.append(temp_stats_dict)
+    return jsonify(temp_stats_dict)
 
+    session.close()
 
-
-
-
+#------------------------------------------------
 
 
 if __name__ == "__main__": app.run(debug=True)
