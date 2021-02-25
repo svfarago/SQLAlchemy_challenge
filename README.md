@@ -2,7 +2,7 @@
 * This is my first SQL project using SQLAlchemy and Flask.
 
 ## ReadMe File
-* Updated: February 24, 2021 | Created: February 17, 2021
+* Updated: February 25, 2021 | Created: February 17, 2021
 * Copyright: open source
 
 ### License ===========================
@@ -16,18 +16,17 @@
 
 ### Installation Instructions ==========
 * Applications used for the SQLAlchemy_challenge:
-- pgAdmin4
-- PostgreSQL 13
-- Jupyter Notebook to read Pandas Dataframes import
+- SQLAlchemy library
+- Flask*
+- Jupyter Notebook
 - GitBash terminal
-- Visual Studio Code for the Readme.md
+- Visual Studio Code (app.py editor)
 - Git Hub (to save versions and share code while in development)
 - Image viewer such as Microsoft Photos or Microsoft Paint
 
 * Similar applications may also work.
 
-* May need to install dependencies for pgAdmin and Postgres to work with Jupyter Notebook. From a command line, run: pip install psycopg2 -or- pip install psycopg2 sqlalchemy
-* May need to install Flask. From a command line, run: pip install flask
+* *May need to install Flask. From a command line, run: pip install flask
 
 
 ### List of Files ====================
@@ -46,7 +45,7 @@
 
 
 ### Operating Instructions =============
-* Note: You may need a password to access a Postgres database.
+* Note: app.py is configured to run on a local database.
 
 
 ### Data Set(s) =======================
@@ -63,11 +62,11 @@
 
 
 ###  Known Bugs =====================
-
+* None.
 
 
 ### Troubleshooting ===============
-* "--" comments are used liberally throughout the code to run individual lines of code for additional testing/troubleshooting, and general "--" comments are used for code notes/additional information.
+* "--" comments are used liberally throughout the code to run individual lines of code for additional testing/troubleshooting, and code notes/additional information.
 
 * Resources used to build and troubleshoot this code are listed below, in addition to help and code peer review from students, instructor, and TA's.
 
@@ -84,7 +83,7 @@
 
 
 
-* URLs last used: February 24, 2021
+* URLs last used: February 25, 2021
 
 
 ###  Contact Information ===============
