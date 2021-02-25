@@ -2,7 +2,7 @@
 * This is my first SQL project using SQLAlchemy and Flask.
 
 ## ReadMe File
-* Updated: February 20, 2021 | Created: February 17, 2021
+* Updated: February 24, 2021 | Created: February 17, 2021
 * Copyright: open source
 
 ### License ===========================
@@ -40,15 +40,13 @@
 -        hawaii.sqlite
 -        hawaii_measurements.csv
 -        hawaii_stations.csv
-*    .gitignore
 *    app.py
-*    postgres.py
 *    climate_analysis.ipynb
 *    README.md
 
 
 ### Operating Instructions =============
-* Note: You may need a password to access the Postgres database.
+* Note: You may need a password to access a Postgres database.
 
 
 ### Data Set(s) =======================
@@ -80,12 +78,13 @@
 - https://docs.sqlalchemy.org/en/13/core/reflection.html
 - https://datatofish.com/round-values-pandas-dataframe/
 - https://docs.sqlalchemy.org/en/13/orm/extensions/automap.html < Key to setting up initial rows of code.
+- https://github.com/cbrownley/foundations-for-analytics-with-python/issues/5
 - https://medium.com/@jman4190/explaining-the-inplace-parameter-for-beginners-5de7ffa18d2e
 - https://www.tutorialspoint.com/python_pandas/python_pandas_descriptive_statistics.htm
 
 
 
-* URLs last used: February 20, 2021
+* URLs last used: February 24, 2021
 
 
 ###  Contact Information ===============
@@ -94,4 +93,4 @@ Colorado   United States
 
 ### Random Notes ===============
 This is my first SQL project using SQLAlchemy and Flask.
-Time to complete: approximately 18 hours
+Time to complete: approximately 20 hours

@@ -7,6 +7,8 @@ from sqlalchemy import create_engine, func, inspect, extract
 
 from flask import Flask, jsonify
 
+from datetime import datetime, date, time
+
 
 #################################################
 # Database Setup
@@ -37,10 +39,23 @@ app = Flask(__name__)
 def welcome():
     """Welcome to the Hawaii Weather API"""
     return (
-        f"Available API Routes:<br/>"
+        f"<h2>Welcome to the Hawaii Weather API</h2>"
+        f"<h3>Available API Routes</h3><br/>"
+        f"<strong>Static</strong><br/>"
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
-        f"/api/v1.0/tobs"
+        f"/api/v1.0/tobs<br/>"
+        f"/api/v1.0/tobs<br/>"
+        f"<br/>"
+        f"<strong>Dynamic</strong><br/>"
+        f"/api/v1.0/<start>(enter start date here)<br/>"
+        f"Enter a start date(m-d-yyyy) to return the minimum, maximum, and average temperatures.<br/>"
+        f"<br/>"
+        f"/api/v1.0/<start>/<end><br/>"
+        f"Enter a start and end date (m-d-yyyy) to return the minimum, maximum, and average temperatures.<br/>"
+        f"<br/>"
+        f"<br/>"
+        f"Dates available for this dataset start at 1/1/2010 and end at 8/23/2017.<br/>"
     )
 
 @app.route("/api/v1.0/precipitation")
@@ -53,7 +68,7 @@ def precipitation():
     filter(Measurement.date >= "2016-08-24").\
     filter(Measurement.date <= "2017-08-23").all()
 
-
+    # Put data into a dictionary format
     precipitation_data = []
     for date, prcp in results:
         precipitation_dict = {}
@@ -88,6 +103,7 @@ def tobs():
     session = Session(engine)
 
     # Query most active station for the last year of data
+    # POTATO is the data structure correct? Jsonified?
     results = session.query(Station.station, Measurement.date, Measurement.tobs).\
     filter(Measurement.date >= "2016-08-24").\
     filter(Measurement.date <= "2017-08-23").\
@@ -101,6 +117,38 @@ def tobs():
 
 #------------------------------------------------
 
+@app.route("/api/v1.0/<start>")
+def start_date(start):
+    # Create session from Python to the DB
+    session = Session(engine)
+
+    # Note: Date input format = 6-15-2018
+    start_date = datetime.strptime(start,"%m-%d-%Y").date()
+
+    temperature_stats = session.query (func.min(Measurement.tobs), func.max (Measurement.tobs), func.avg (Measurement.tobs)).\
+        filter(Measurement.date >= start_date).all()
+    
+    temp_stats_results = list(np.ravel(temperature_stats))
+
+    min_temp = temp_stats_results[0]
+    max_temp = temp_stats_results[1]
+    avg_temp = temp_stats_results[2]
+
+
+    # Put data into a dictionary format
+    temp_stats_data = []
+    temp_stats_dict = [{"Start Date": start},
+        {"Minimum Temperature": min_temp},
+        {"Maximum Temperature": max_temp},
+        {"Average Temperature": avg_temp}
+        ]
+
+
+    return jsonify(temp_stats_dict)
+
+    session.close()
+
+#------------------------------------------------
 
 
 
