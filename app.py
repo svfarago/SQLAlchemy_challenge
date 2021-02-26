@@ -125,7 +125,6 @@ def start_date(start):
 
     # Note: Date input format = 8-5-2017
     start_date = datetime.strptime(start,"%m-%d-%Y").date()
-    #start_date = datetime.strptime(start, '%Y-%m-%d').date()
 
     temp_calc = session.query (func.min (Measurement.tobs), func.max (Measurement.tobs), func.avg (Measurement.tobs)).\
         filter(Measurement.date >= start_date).all()
